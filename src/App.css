@@ -1,5 +1,8 @@
 :root {
-  background-color: #242424;
+  height: 100vh;
+  width: 100vw;
+  background: #0E0E0E;
+  background: linear-gradient(144deg,rgba(14, 14, 14, 1) 27%, rgba(9, 9, 121, 1) 89%, rgba(0, 212, 255, 1) 100%);
 }
 
 

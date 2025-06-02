@@ -1,3 +1,5 @@
+import './Login.css'
+
 type LoginProps = {
     setUser: (user: { name: string; role: string }) => void;
   };
@@ -28,8 +30,15 @@ type LoginProps = {
     return (
       <div className="loginContainer">
         <div className="flexhalf">
+        <div className="detailHalf">
+            <div className="detailContainer">
+              <h1>Welcome to the App</h1>
+              <p>This is a simple login page layout.</p>
+              <p>Feel free to customize it as per your needs.</p>
+            </div>
+          </div>
           <div className="loginForm">
-            <h1>Login</h1>
+            <h1>Welcome Back!</h1>
             <form onSubmit={handleLogin}>
               <div className="inputContainer">
                 <label htmlFor="username">Username</label>
@@ -39,16 +48,19 @@ type LoginProps = {
                 <label htmlFor="password">Password</label>
                 <input type="password" id="password" name="password" required />
               </div>
+              <div className="checkbox-wrapper-2">
+                <p>Remember me?</p><input type="checkbox" className="sc-gJwTLC ikxBAC" />
+              </div>
               <button type="submit">Login</button>
             </form>
-          </div>
-          <div className="detailHalf">
-            <div className="detailContainer">
-              <h1>Welcome to the App</h1>
-              <p>This is a simple login page layout.</p>
-              <p>Feel free to customize it as per your needs.</p>
+
+            <div className="OAuthButtons">
+              <p>O</p>
+              <button className="googleButton">Login with Google</button>
+              <button className="facebookGithub">Login with Github</button>
             </div>
           </div>
+          
         </div>
       </div>
     );
