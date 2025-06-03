@@ -18,10 +18,9 @@ const Navigation = ({IsUserLogged, setUser}: NavigationProps) => {
         }
         return (
             <nav>
-                <Link to="/">Login</Link><br/>
                 <Link to="/PublicPage">Public Page</Link><br/>
-                <Link to="/AdminPage">Admin Page</Link>
-                {IsUserLogged? (<p onClick={handleLogout}>LogOut</p>):null}
+                <Link to="/AdminPage">Admin Page</Link><br />
+                <Link to="/" onClick={handleLogout}>LogOut</Link>
             </nav>
         );
     }

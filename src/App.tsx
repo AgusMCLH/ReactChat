@@ -2,7 +2,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 import './App.css'; // Assuming you have a CSS file for styling
 import Login from './Pages/Login/Login.tsx';
 import PublicPage from './Pages/public.tsx';
-import AdminPage from './protectedPages/AdminPage.tsx';
+import ChatPage from './protectedPages/Chat.tsx';
 import { useState } from 'react';
 import { useEffect } from 'react';
 import Navigation from './Pages/GlobalComponents/Navigation/Navigation.tsx';
@@ -18,17 +18,17 @@ const App = () => {
   }, [user]);
   return (
     <>
-      <Navigation IsUserLogged={!!user} setUser={setUser}/>
+      {user?<Navigation IsUserLogged={!!user} setUser={setUser}/>:null}
 
       <Routes>
-        <Route index element={<Login setUser={setUser}/>} />
-        <Route path="/login" element={<Navigate to={"/"}/>} />
+        <Route index element={!user?<Login setUser={setUser}/>:<Navigate to={'/chatpage'}/>} />
+        <Route path="/login" element={!user?<Login setUser={setUser}/>:<Navigate to={'/chatpage'}/>} />
         <Route path="PublicPage" element={<PublicPage />} />
         <Route 
-          path="AdminPage" 
+          path="/ChatPage" 
           element={
             <ProtectedRoute user={user} admitedRoles={['admin']}>
-              <AdminPage user={user}/>
+              <ChatPage user={user}/>
             </ProtectedRoute>
           }/>
         
