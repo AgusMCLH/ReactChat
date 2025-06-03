@@ -1,12 +1,20 @@
 /* Estilos Generales */
 
+/*   
+  --primary-color: #00d4ff;
+  --secondary-color: #090979;
+  --background-color: #0e0e0e;
+  --text-color: #c5c5c5;
+  --black-1: #1a1919;
+*/
+
 button{
     margin: auto;
     transition: all 0.3s ease-in-out;
     width: 100%;
     height: 40px;
-    background-color: #0e0e0e;
-    color: #c5c5c5;
+    background-color: var(--background-color);
+    color: var(--text-color);
     border-radius: 5px;
     font-size: 1rem;
     cursor: pointer;
@@ -16,14 +24,14 @@ button{
     --main-bg: conic-gradient(
       from var(--border-angle),
       #213,
-      #0e0e0e 0%
+      var(--background-color) 0%
     );
     border: solid 0px transparent;
     --gradient-border: conic-gradient(
       from var(--border-angle),
       transparent 25%,
-      rgba(9, 9, 121, 1),
-      rgba(0, 212, 255, 1) 99%,
+      var(--secondary-color),
+      var(--primary-color) 99%,
       transparent
     );
     background: var(--main-bg) padding-box, var(--gradient-border) border-box, var(--main-bg) border-box;
@@ -40,8 +48,8 @@ button:hover{
     border: solid 2px transparent;
     -webkit-animation-play-state: running;
     animation-play-state: running;
-    background-color: #1a1919;
-    filter: drop-shadow(0px 0px 10px rgba(0, 212, 255, 1));
+    background-color: var(--black-1);
+    filter: drop-shadow(0px 0px 10px var(--primary-color));
 }
 
 
@@ -66,16 +74,17 @@ button:hover{
 
 
 .loginContainer {
-    
+    background: linear-gradient(144deg, var(--background-color) 27%, var(--secondary-color) 89%, var(--primary-color) 100%);
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
+  width: 100vw;
   position: relative;
 }	
 .loginContainer .flexhalf{
-    filter: drop-shadow(0px 0px 10px rgba(255, 255, 255, 0.247));
+    filter: drop-shadow(0px 0px 20px rgba(255, 255, 255, 0.247));
     position: absolute;
     bottom: 15%;
     border-radius: 22px;
@@ -85,7 +94,8 @@ button:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #1a1919;
+    background-color: var(--black-1);
+    min-height: fit-content;
 }
 
 .loginContainer .flexhalf div{
@@ -136,7 +146,7 @@ button:hover{
 
 .loginContainer .flexhalf .loginForm h1{
     font-size: 2rem;
-    color: #c5c5c5;
+    color: var(--text-color);
     margin-bottom: 10px;
 }
 
@@ -154,7 +164,7 @@ button:hover{
 
 .loginContainer .flexhalf .loginForm form .inputContainer label{
     margin-top: 10px;
-    color: #c5c5c5;
+    color: var(--text-color);
     font-size: 1rem;
     margin-bottom: 5px;
 }
@@ -185,7 +195,7 @@ button:hover{
     margin-top: 15px;
 }
 .loginContainer .flexhalf .loginForm form .checkbox-wrapper-2 p{
-    color: #c5c5c5;
+    color: var(--text-color);
     font-size: 0.9rem;
     margin: 0;
     padding: 0;
@@ -238,7 +248,7 @@ button:hover{
 }
 
 .loginContainer .flexhalf .loginForm form .checkbox-wrapper-2 .ikxBAC:checked {
-    background-color: rgba(0, 212, 255, 1);
+    background-color: var(--primary-color);
 }
 
 .loginContainer .flexhalf .loginForm form .checkbox-wrapper-2 .ikxBAC:checked::after {
@@ -251,7 +261,7 @@ button:hover{
 }
 
 .loginContainer .flexhalf .loginForm form .checkbox-wrapper-2 .ikxBAC:checked:hover {
-    background-color: rgba(0, 212, 255, 1);
+    background-color: var(--primary-color);
 }
 
 .loginContainer .flexhalf .loginForm .OAuthButtons{
@@ -263,15 +273,15 @@ button:hover{
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    border-top: 1px solid #c5c5c5;
+    border-top: 1px solid var(--text-color);
     gap: 10px;
 }
 
 .loginContainer .flexhalf .loginForm .OAuthButtons p{
-    color: #c5c5c5;
+    color: var(--text-color);
     margin: 0px;
     padding: 2px 30px;
-    background-color: #1a1919;
+    background-color: var(--black-1);
     font-size: 0.9rem;
     position: absolute;
     top: 0px;
